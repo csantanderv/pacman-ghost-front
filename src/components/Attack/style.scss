@@ -1,0 +1,33 @@
+.attack {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+
+    border-radius: 4px;
+    background: #30d33b;
+    box-shadow: 3px 3px 6px #29b533,
+        -3px -3px 6px #37f143;
+
+    :active {
+        border-radius: 4px;
+        background: #30d33b;
+        box-shadow: inset 3px 3px 6px #29b533,
+            inset -3px -3px 6px #37f143;
+    }
+}
+
+.attack-img {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+}

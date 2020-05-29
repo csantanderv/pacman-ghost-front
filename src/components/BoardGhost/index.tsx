@@ -1,13 +1,13 @@
 import React from 'react';
-import GhostField from '../GhostField';
 import BossHouse from '../BossHouse/index';
+import AttackField from '../AttackField/index';
 import './style.scss';
 
 const BoardGhost = () => {
   return (
     <div className='board'>
       <BossHouse />
-      <GhostField />
+      <AttackField />
     </div>
   );
 };
