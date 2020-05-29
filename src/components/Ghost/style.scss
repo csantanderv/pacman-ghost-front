@@ -1,0 +1,33 @@
+.ghost {
+  margin: 10px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  background: #30d33b;
+  box-shadow: -4px 4px 8px #29b533,
+    4px -4px 8px #37f143;
+
+  :active {
+    border-radius: 14px;
+    background: #30d33b;
+    box-shadow: inset -4px 4px 8px #29b533,
+      inset 4px -4px 8px #37f143;
+  }
+}
+
+.ghost-img {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}

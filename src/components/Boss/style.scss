@@ -1,0 +1,32 @@
+.boss {
+    margin: 0 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 14px;
+    background: #30d33b;
+    box-shadow: -8px 8px 16px #29b533,
+        8px -8px 16px #37f143;
+
+    :active {
+        border-radius: 14px;
+        background: #30d33b;
+        box-shadow: inset -8px 8px 16px #29b533,
+            inset 8px -8px 16px #37f143;
+    }
+}
+
+.boss-img {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
