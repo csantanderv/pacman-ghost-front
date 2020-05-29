@@ -6,7 +6,12 @@ const GhostField = () => {
   return (
     <div className='ghost-field'>
       <div className='ghost-list'>
-        <Ghost />
+        <Ghost
+          positionX={6}
+          positionY={2}
+          onClick={() => {}}
+          showGhost={true}
+        />
       </div>
     </div>
   );

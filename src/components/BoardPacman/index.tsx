@@ -1,15 +1,15 @@
 import React from 'react';
 import GhostField from '../GhostField';
-import BossHouse from '../BossHouse';
+import PacmanHouse from '../PacmanHouse';
 import './style.scss';
 
-const Board = () => {
+const BoardPacman = () => {
   return (
     <div className='board'>
-      <BossHouse />
+      <PacmanHouse />
       <GhostField />
     </div>
   );
 };
 
-export default Board;
+export default BoardPacman;

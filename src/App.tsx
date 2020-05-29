@@ -1,9 +1,24 @@
 import React from 'react';
-import Board from './components/Board';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import BoardGhost from './components/BoardGhost/index';
+import BoardPacman from './components/BoardPacman/index';
 import './App.css';
 
 function App() {
-  return <Board />;
+  return (
+    <Router>
+      <div>
+        <Switch>
+          <Route path='/ghost'>
+            <BoardGhost />
+          </Route>
+          <Route path='/pacman'>
+            <BoardPacman />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
