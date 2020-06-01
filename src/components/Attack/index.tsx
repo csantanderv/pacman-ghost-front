@@ -1,22 +1,23 @@
 import React, { FC } from 'react';
-import Ghost1Img from '../../assets/ghost-1.svg';
+import { GhostPosition } from '../Types';
 import './style.scss';
-
-export type Position = { positionX: number; positionY: number };
 
 type AttackProps = {
   positionX: number;
   positionY: number;
-  onClick(position: Position): void;
+  close: boolean;
+  onClick(position: GhostPosition): void;
 };
 
 const Attack: FC<AttackProps> = (props: AttackProps) => {
-  const { positionX, positionY, onClick } = props;
+  const { positionX, positionY, onClick, close } = props;
   const handleClick = () => {
     onClick({ positionX: positionX, positionY: positionY });
   };
 
-  return (
+  return close ? (
+    <div className='attack-close'></div>
+  ) : (
     <div className='attack'>
       <div className='attack-img' onClick={handleClick}></div>
     </div>

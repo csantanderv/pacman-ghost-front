@@ -1,45 +1,64 @@
-import React, { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect, useContext } from 'react';
 import Ghost1Img from '../../assets/ghost-1.svg';
+import { Config, EventTypes } from '../../config';
+import { GhostPosition } from '../Types';
+import { useSocket } from '../../hooks/useSocket';
 import './style.scss';
+import { ContextSocket, SocketContext } from '../../context/SocketContext';
 
 type GhostProps = {
-  positionX: number;
-  positionY: number;
-  onClick(): void;
+  onClick(position: GhostPosition): void;
 };
 
-const GhostSize = 40;
-
 const Ghost: FC<GhostProps> = (props: GhostProps) => {
-  const { positionX, positionY } = props;
-  const [showGhost, setShowGhost] = useState(true);
+  const socketContext = useContext<ContextSocket>(SocketContext);
+  const { socket } = socketContext;
+  const [showGhost, setShowGhost] = useState(false);
+  const [position, setPosition] = useState<GhostPosition>({
+    positionX: 0,
+    positionY: 0,
+  });
+
+  useEffect(() => {
+    if (socket !== null) {
+      socket.on(EventTypes.ShowGhost, (data: any) => {
+        setPosition(data);
+        setShowGhost(true);
+      });
+    }
+  }, [socket]);
 
   useEffect(() => {
     setTimeout(() => {
       setShowGhost(false);
-    }, 300);
-  });
-
-  useEffect(() => {
-    setShowGhost(true);
-  }, [positionY, positionX]);
+    }, Config.ghostTime);
+    return () => {
+      clearTimeout();
+    };
+  }, [showGhost]);
 
   const handleClick = () => {
-    alert(positionX + ' ' + positionY);
+    if (socket) {
+      socket.emit(EventTypes.KillGhost, position);
+    }
   };
 
-  const styleGhost = {
-    top: positionY * GhostSize,
-    left: positionX * GhostSize,
-  };
-
-  return showGhost ? (
-    <div className='ghost' style={styleGhost} onClick={handleClick}>
+  const ghost = showGhost ? (
+    <div
+      className='ghost'
+      style={{
+        top: position.positionY * Config.ghostSize,
+        left: position.positionX * Config.ghostSize,
+      }}
+      onClick={handleClick}
+    >
       <div className='ghost-img'>
         <img src={Ghost1Img}></img>
       </div>
     </div>
   ) : null;
+
+  return ghost;
 };
 
 export default Ghost;

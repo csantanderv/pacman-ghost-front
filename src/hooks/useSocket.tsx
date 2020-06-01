@@ -17,7 +17,7 @@ export const useSocket = (): [SocketIOClient.Socket | null, string] => {
         setError('Ocurrió un error al conectarse al servidor del juego');
       }
     }
-  }, []);
+  }, [socket]);
 
   return [socket, error];
 };
