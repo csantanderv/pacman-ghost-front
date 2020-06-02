@@ -3,7 +3,7 @@ import { EventTypes, Config } from '../config';
 import { ContextSocket, SocketContext } from '../context/SocketContext';
 import { GhostPosition } from '../components/Types';
 
-const useShowGost = () => {
+const useShowGhost = () => {
   const socketContext = useContext<ContextSocket>(SocketContext);
   const { socket } = socketContext;
   const [showGhost, setShowGhost] = useState(false);
@@ -41,4 +41,4 @@ const useShowGost = () => {
   return { showGhost, position, killGhost };
 };
 
-export default useShowGost;
+export default useShowGhost;

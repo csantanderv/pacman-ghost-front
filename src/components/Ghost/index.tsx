@@ -1,20 +1,21 @@
-import React, { FC, useState, useEffect, useContext } from 'react';
+import React, { FC } from 'react';
 import Ghost1Img from '../../assets/ghost-1.svg';
-import { Config, EventTypes } from '../../config';
+import { Config } from '../../config';
 import { GhostPosition } from '../Types';
-import { ContextSocket, SocketContext } from '../../context/SocketContext';
+import useShowGhost from '../../hooks/useShowGhost';
 import './style.scss';
-import useShowGost from '../../hooks/useShowGhost';
 
 type GhostProps = {
   onClick(position: GhostPosition): void;
 };
 
 const Ghost: FC<GhostProps> = (props: GhostProps) => {
-  const { showGhost, position, killGhost } = useShowGost();
+  const { onClick } = props;
+  const { showGhost, position, killGhost } = useShowGhost();
 
   const handleClick = () => {
     killGhost();
+    onClick(position);
   };
 
   const ghost = showGhost ? (
