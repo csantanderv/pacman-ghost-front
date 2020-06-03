@@ -1,0 +1,44 @@
+.eaten {
+    margin: 0 0 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 80px;
+    border-radius: 14px;
+    background: #30d33b;
+    box-shadow: -8px 8px 16px #29b533,
+        8px -8px 16px #37f143;
+
+    :active {
+        border-radius: 14px;
+        background: #30d33b;
+        box-shadow: inset -8px 8px 16px #29b533,
+            inset 8px -8px 16px #37f143;
+    }
+}
+
+.eaten-img {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.eaten-total {
+    display: flex;
+    justify-content: center;
+    margin: 0px 20px 0px 20px;
+    width: 60px;
+
+    h2 {
+        font-size: 20px;
+        color: white;
+    }
+}

@@ -4,7 +4,7 @@ import './style.scss';
 
 const Boss = () => {
   return (
-    <div className='boss' style={{ top: 100 }}>
+    <div className='boss'>
       <div className='boss-img'>
         <img src={BossImg}></img>
       </div>

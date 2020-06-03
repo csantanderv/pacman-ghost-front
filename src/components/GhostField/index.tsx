@@ -1,17 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Ghost from '../Ghost';
-import './style.scss';
-import { useSocket } from '../../hooks/useSocket';
-import { EventTypes } from '../../config';
 import { GhostPosition } from '../Types';
+import './style.scss';
+import { useDispatch } from 'react-redux';
+import { saveGhost } from '../../store/Actions';
 
 const GhostField = () => {
-  const handleClick = (position: GhostPosition) => {};
-
   return (
     <div className='ghost-field'>
       <div className='ghost-list'>
-        <Ghost onClick={handleClick} />
+        <Ghost />
       </div>
     </div>
   );

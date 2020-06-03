@@ -1,21 +1,18 @@
 import React, { FC } from 'react';
-import Ghost1Img from '../../assets/ghost-1.svg';
 import { Config } from '../../config';
-import { GhostPosition } from '../Types';
 import useShowGhost from '../../hooks/useShowGhost';
+import GhostImg from '../GhostImg';
 import './style.scss';
+import { saveGhost } from '../../store/Actions';
+import { useDispatch } from 'react-redux';
 
-type GhostProps = {
-  onClick(position: GhostPosition): void;
-};
-
-const Ghost: FC<GhostProps> = (props: GhostProps) => {
-  const { onClick } = props;
+const Ghost: FC = () => {
   const { showGhost, position, killGhost } = useShowGhost();
+  const dispatch = useDispatch();
 
   const handleClick = () => {
     killGhost();
-    onClick(position);
+    dispatch(saveGhost(position));
   };
 
   const ghost = showGhost ? (
@@ -28,7 +25,7 @@ const Ghost: FC<GhostProps> = (props: GhostProps) => {
       onClick={handleClick}
     >
       <div className='ghost-img'>
-        <img src={Ghost1Img}></img>
+        <GhostImg />
       </div>
     </div>
   ) : null;
