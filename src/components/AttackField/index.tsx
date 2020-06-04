@@ -2,25 +2,24 @@ import React, { useState, useEffect } from 'react';
 import Attack from '../Attack';
 import { GhostPosition } from '../Types';
 import useAttack from '../../hooks/useAttack';
-import useCloseAttack from '../../hooks/useCloseAttack';
+import useDestroyAttack from '../../hooks/useDestroyAttack';
 import { addCounter } from '../../store/Actions';
 import { useDispatch } from 'react-redux';
 import './style.scss';
-import { Config } from '../../config';
 
 const AttackField = () => {
   const { isAttacking, setAttack } = useAttack();
-  const { closeAttack, setClosed } = useCloseAttack();
-  const [closedAttacks, setClosedAttacks] = useState<GhostPosition[]>([]);
+  const { attackDestroyed, destroy } = useDestroyAttack();
+  const [destroyed, setDestroyed] = useState<GhostPosition[]>([]);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (closeAttack) {
-      setClosedAttacks([...closedAttacks, closeAttack]);
-      setClosed();
+    if (attackDestroyed) {
+      setDestroyed([...destroyed, attackDestroyed]);
+      destroy();
       dispatch(addCounter());
     }
-  }, [closeAttack]);
+  }, [attackDestroyed, destroyed, destroy, dispatch]);
 
   const handleClickAttack = (position: GhostPosition) => {
     if (setAttack && !isAttacking) {
@@ -31,7 +30,7 @@ const AttackField = () => {
   let count = 0;
   for (let y = 0; y <= 8; y++) {
     for (let x = 0; x <= 6; x++) {
-      const indexClosed = closedAttacks.findIndex(
+      const indexClosed = destroyed.findIndex(
         (item) => item.positionX === x && item.positionY === y,
       );
       attacks.push(

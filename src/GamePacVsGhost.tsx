@@ -1,5 +1,5 @@
 import React, { useEffect, FC } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import BoardGhost from './components/BoardGhost/index';
 import BoardPacman from './components/BoardPacman/index';
 import { useSocket } from './hooks/useSocket';

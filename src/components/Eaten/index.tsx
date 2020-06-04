@@ -14,7 +14,7 @@ const Eaten = () => {
   return (
     <div className='eaten'>
       <div className='eaten-img'>
-        <img src={EatImg}></img>
+        <img src={EatImg} alt='Eat'></img>
       </div>
       <div className='eaten-total'>
         <h2>{total}</h2>

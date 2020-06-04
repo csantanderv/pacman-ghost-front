@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { Config } from '../../config';
 import useShowGhost from '../../hooks/useShowGhost';
 import GhostImg from '../GhostImg';
-import './style.scss';
 import { saveGhost } from '../../store/Actions';
 import { useDispatch } from 'react-redux';
+import './style.scss';
 
 const Ghost: FC = () => {
   const { showGhost, position, killGhost } = useShowGhost();

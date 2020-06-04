@@ -6,7 +6,7 @@ const Pacman = () => {
   return (
     <div className='pacman'>
       <div className='pacman-img'>
-        <img src={PacmanImg}></img>
+        <img src={PacmanImg} alt='Pacman'></img>
       </div>
     </div>
   );

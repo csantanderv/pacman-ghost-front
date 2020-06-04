@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
-
-import { useSocket } from './useSocket';
+import { useEffect, useState, useContext } from 'react';
 import { EventTypes } from '../config';
 import { GhostPosition } from '../components/Types';
 import { ContextSocket, SocketContext } from '../context/SocketContext';

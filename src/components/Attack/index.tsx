@@ -1,8 +1,6 @@
 import React, { FC } from 'react';
 import { GhostPosition } from '../Types';
 import './style.scss';
-import { useDispatch } from 'react-redux';
-import { addCounter } from '../../store/Actions';
 
 type AttackProps = {
   positionX: number;

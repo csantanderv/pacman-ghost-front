@@ -1,4 +1,3 @@
-import React, { useContext } from 'react';
 import Axios, { AxiosRequestConfig, AxiosInstance } from 'axios';
 import { Config } from '../config';
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.scss';
 import Pacman from '../Pacman/index';
 import Eaten from '../Eaten';
+import './style.scss';
 
 const PacmanHouse = () => {
   return (

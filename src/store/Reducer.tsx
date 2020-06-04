@@ -1,4 +1,4 @@
-import { ADD_COUNTER, GameState } from './Types';
+import { ADD_COUNTER } from './Types';
 import { combineReducers } from 'redux';
 
 const initialState = {

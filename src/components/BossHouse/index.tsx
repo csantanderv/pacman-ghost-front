@@ -1,7 +1,7 @@
 import React from 'react';
 import Boss from '../Boss/index';
-import './style.scss';
 import Cementery from '../Cementery';
+import './style.scss';
 
 const BossHouse = () => {
   return (

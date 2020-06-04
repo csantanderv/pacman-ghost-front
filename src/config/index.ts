@@ -8,6 +8,6 @@ export const EventTypes = {
   SendAttack: 'SendAttack',
   ShowGhost: 'ShowGhost',
   KillGhost: 'KillGhost',
-  CloseAttack: 'CloseAttack',
+  DestroyAttack: 'DestroyAttack',
   AttackSended: 'AttackSended',
 };
