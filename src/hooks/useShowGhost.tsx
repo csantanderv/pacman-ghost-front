@@ -7,6 +7,7 @@ const useShowGhost = () => {
   const socketContext = useContext<ContextSocket>(SocketContext);
   const { socket } = socketContext;
   const [showGhost, setShowGhost] = useState(false);
+  const [idTimeOut, setIdTimeout] = useState();
   const [position, setPosition] = useState<GhostPosition>({
     positionX: 0,
     positionY: 0,
@@ -22,19 +23,19 @@ const useShowGhost = () => {
   }, [socket]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowGhost(false);
-    }, Config.ghostTime);
-    return () => {
-      clearTimeout();
-    };
+    if (showGhost) {
+      const t = setTimeout(() => {
+        setShowGhost(false);
+      }, Config.ghostTime);
+      setIdTimeout(t);
+    }
   }, [showGhost]);
 
   const killGhost = () => {
     if (socket) {
       socket.emit(EventTypes.KillGhost, position);
+      clearTimeout(idTimeOut);
       setShowGhost(false);
-      clearTimeout();
     }
   };
 

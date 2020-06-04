@@ -1,6 +1,6 @@
 export const Config = {
   urlSocket: 'http://localhost:3002',
-  ghostTime: 10000,
+  ghostTime: 500,
   ghostSize: 40,
 };
 
