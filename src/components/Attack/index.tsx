@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { GhostPosition } from '../Types';
 import './style.scss';
+import { useDispatch } from 'react-redux';
+import { addCounter } from '../../store/Actions';
 
 type AttackProps = {
   positionX: number;
@@ -11,6 +13,7 @@ type AttackProps = {
 
 const Attack: FC<AttackProps> = (props: AttackProps) => {
   const { positionX, positionY, onClick, close } = props;
+
   const handleClick = () => {
     onClick({ positionX: positionX, positionY: positionY });
   };

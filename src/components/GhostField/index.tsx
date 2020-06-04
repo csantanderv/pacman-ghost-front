@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Ghost from '../Ghost';
-import { GhostPosition } from '../Types';
 import './style.scss';
-import { useDispatch } from 'react-redux';
-import { saveGhost } from '../../store/Actions';
 
-const GhostField = () => {
+const GhostField: FC = () => {
   return (
     <div className='ghost-field'>
       <div className='ghost-list'>
