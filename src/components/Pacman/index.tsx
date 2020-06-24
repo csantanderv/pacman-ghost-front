@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import PacmanImg from '../../assets/pacman.svg';
 import './style.scss';
 
-const Pacman = () => {
+const Pacman: FC = () => {
   return (
     <div className='pacman'>
       <div className='pacman-img'>

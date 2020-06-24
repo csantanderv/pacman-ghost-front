@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, FC } from 'react';
 import Attack from '../Attack';
 import { GhostPosition } from '../Types';
 import useAttack from '../../hooks/useAttack';
@@ -7,7 +7,7 @@ import { addCounter } from '../../store/Actions';
 import { useDispatch } from 'react-redux';
 import './style.scss';
 
-const AttackField = () => {
+const AttackField: FC = () => {
   const { isAttacking, setAttack } = useAttack();
   const { attackDestroyed, destroy } = useDestroyAttack();
   const [destroyed, setDestroyed] = useState<GhostPosition[]>([]);

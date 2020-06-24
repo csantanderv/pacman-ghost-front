@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import DinningField from '../DinningField';
 import PacmanHouse from '../PacmanHouse';
 import './style.scss';
 
-const BoardPacman = () => {
+const BoardPacman: FC = () => {
   return (
     <div className='board'>
       <PacmanHouse />

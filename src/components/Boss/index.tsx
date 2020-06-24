@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import BossImg from '../../assets/boss.svg';
 import './style.scss';
 
-const Boss = () => {
+const Boss: FC = () => {
   return (
     <div className='boss'>
       <div className='boss-img'>

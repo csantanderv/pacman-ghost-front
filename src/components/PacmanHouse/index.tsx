@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Pacman from '../Pacman/index';
 import Eaten from '../Eaten';
 import './style.scss';
 
-const PacmanHouse = () => {
+const PacmanHouse: FC = () => {
   return (
     <div className='pacman-house'>
       <Pacman />

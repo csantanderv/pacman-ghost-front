@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, FC } from 'react';
 import EatImg from '../../assets/eat.svg';
 import { useSelector } from 'react-redux';
 import { getCounter } from '../../store/Selector';
 import './style.scss';
 
-const Eaten = () => {
+const Eaten: FC = () => {
   const counter = useSelector(getCounter);
 
   useEffect(() => {

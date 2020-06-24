@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import CementertImg from '../../assets/cementery.svg';
 import { useSelector } from 'react-redux';
 import { getCounter } from '../../store/Selector';
 import './style.scss';
 
-const Cementery = () => {
+const Cementery: FC = () => {
   const counter = useSelector(getCounter);
   return (
     <div className='cementery'>
