@@ -10,7 +10,7 @@ const useAttack = () => {
   const [errorAttacking, setErrorAttacking] = useState('');
 
   useEffect(() => {
-    if (socket !== null) {
+    if (socket) {
       socket.on(EventTypes.AttackSended, () => {
         setIsAttacking(false);
       });

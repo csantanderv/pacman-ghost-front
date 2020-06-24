@@ -11,9 +11,9 @@ const useDestroyAttack = () => {
   );
 
   useEffect(() => {
-    if (socket !== null) {
-      socket.on(EventTypes.DestroyAttack, (data: any) => {
-        setAttackDestroyed(data);
+    if (socket) {
+      socket.on(EventTypes.DestroyAttack, (position: GhostPosition) => {
+        setAttackDestroyed(position);
       });
     }
   }, [socket]);

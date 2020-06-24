@@ -6,7 +6,7 @@ const Boss = () => {
   return (
     <div className='boss'>
       <div className='boss-img'>
-        <img src={BossImg} alt='Boss'></img>
+        <img src={BossImg} alt='Boss' />
       </div>
     </div>
   );

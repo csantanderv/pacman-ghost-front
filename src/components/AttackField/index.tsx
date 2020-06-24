@@ -26,6 +26,7 @@ const AttackField = () => {
       setAttack(position);
     }
   };
+
   const attacks = [];
   let count = 0;
   for (let y = 0; y <= 8; y++) {
@@ -36,8 +37,7 @@ const AttackField = () => {
       attacks.push(
         <Attack
           key={count}
-          positionX={x}
-          positionY={y}
+          position={{ positionX: x, positionY: y }}
           onClick={handleClickAttack}
           close={indexClosed !== -1}
         />,

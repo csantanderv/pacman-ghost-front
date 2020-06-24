@@ -14,9 +14,9 @@ const useShowGhost = () => {
   });
 
   useEffect(() => {
-    if (socket !== null) {
-      socket.on(EventTypes.ShowGhost, (data: any) => {
-        setPosition(data);
+    if (socket) {
+      socket.on(EventTypes.ShowGhost, (position: GhostPosition) => {
+        setPosition(position);
         setShowGhost(true);
       });
     }

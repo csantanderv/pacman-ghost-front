@@ -9,7 +9,7 @@ export const useSocket = (): [SocketIOClient.Socket | null, string] => {
   useEffect(() => {
     if (socket === null) {
       try {
-        const socket = socketIOClient(Config.urlSocket + '/gameEvents', {
+        const socket = socketIOClient(Config.urlSocket, {
           forceNew: true,
         });
         setSocket(socket);

@@ -10,7 +10,6 @@ import Ghost8 from '../../assets/ghost-8.svg';
 import Ghost9 from '../../assets/ghost-9.svg';
 
 const GhostImg: FC = () => {
-  //const ghost = `../../assets/ghost-${Math.floor(Math.random() * 9) + 1}.svg`;
   switch (Math.floor(Math.random() * 9) + 1) {
     case 1:
       return <img src={Ghost1} alt='Ghost' />;

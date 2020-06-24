@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Ghost from '../Ghost';
 import './style.scss';
 
-const GhostField: FC = () => {
+const DinningField: FC = () => {
   return (
     <div className='ghost-field'>
       <div className='ghost-list'>
@@ -12,4 +12,4 @@ const GhostField: FC = () => {
   );
 };
 
-export default GhostField;
+export default DinningField;
