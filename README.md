@@ -19,7 +19,7 @@ $ npm run
 Then you have to change this value with your backend URL, the ghost timeout and the ghost size.
 
 ```bash
-# src/config/Config.ts
+# src/config/index.ts
 
 export const Config = {
   urlSocket: 'http://localhost:3002',
